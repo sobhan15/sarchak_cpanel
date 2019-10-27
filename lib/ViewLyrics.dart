@@ -175,40 +175,41 @@ class _ViewLyricsState extends State<ViewLyrics> {
     String musicdir = widget.uri.replaceAll(musicName, "");
     uploaderMan = FlutterUploader();
     String url = "${BasicData.basicUrl}/uploadMusic";
-    taskId = uploaderMan.enqueue(
-      url: Uri.encodeFull(url),
-      method: UploadMethod.POST,
-      files: [
-        FileItem(filename: lyricsName, savedDir: lyricsdir, fieldname: "lyric"),
-        FileItem(filename: musicName, savedDir: musicdir, fieldname: "music")
-      ],
-      data: {
-        "lyricsName": "lyrics-${audioTag["title"]}.json",
-        "musicName": musicName
-      },
-      showNotification: false,
-    );
+    print(url);
+    // taskId = uploaderMan.enqueue(
+    //   url: Uri.encodeFull(url),
+    //   method: UploadMethod.POST,
+    //   files: [
+    //     FileItem(filename: lyricsName, savedDir: lyricsdir, fieldname: "lyric"),
+    //     FileItem(filename: musicName, savedDir: musicdir, fieldname: "music")
+    //   ],
+    //   data: {
+    //     "lyricsName": "lyrics-${audioTag["title"]}.json",
+    //     "musicName": musicName
+    //   },
+    //   showNotification: false,
+    // );
 
-    setState(() {
-      uploadingWindow = true;
-    });
+    // setState(() {
+    //   uploadingWindow = true;
+    // });
 
-    uploaderMan.progress.listen((p) {
-      setState(() {
-        progressUpload = p.progress;
-      });
+    // uploaderMan.progress.listen((p) {
+    //   setState(() {
+    //     progressUpload = p.progress;
+    //   });
 
-      if (p.progress == 100) {
-        setState(() {
-          uploadingWindow = false;
-          // _scaffoldKey.currentState.showSnackBar(SnackBar(
-          //   content: Text("Upload Finish,Good Job",),
-          //   duration: Duration(seconds: 1),
-          //   backgroundColor: Colors.green,
-          // ));
-        });
-      }
-    });
+    //   if (p.progress == 100) {
+    //     setState(() {
+    //       uploadingWindow = false;
+    //       // _scaffoldKey.currentState.showSnackBar(SnackBar(
+    //       //   content: Text("Upload Finish,Good Job",),
+    //       //   duration: Duration(seconds: 1),
+    //       //   backgroundColor: Colors.green,
+    //       // ));
+    //     });
+    //   }
+    // });
   }
 
   void initNewAudioPlayer() {
@@ -369,7 +370,7 @@ class _ViewLyricsState extends State<ViewLyrics> {
                               if (speedPlayBack < 10) {
                                 setState(() {
                                   speedPlayBack += 1;
-                                   audioPlayer.setRate(speedPlayBack / 10);
+                                  audioPlayer.setRate(speedPlayBack / 10);
                                 });
                               }
                             },
