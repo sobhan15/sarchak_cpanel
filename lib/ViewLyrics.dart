@@ -59,6 +59,7 @@ class _ViewLyricsState extends State<ViewLyrics> {
     print("dispose");
     super.dispose();
     var result = await audioPlayer.stop();
+    uploaderMan.dispose();
   }
 
   stop() async {
@@ -368,7 +369,7 @@ class _ViewLyricsState extends State<ViewLyrics> {
                         children: <Widget>[
                           GestureDetector(
                             onTap: () {
-                              if (speedPlayBack < 10) {
+                              if (speedPlayBack < 15) {
                                 setState(() {
                                   speedPlayBack += 1;
                                   audioPlayer.setRate(speedPlayBack / 10);

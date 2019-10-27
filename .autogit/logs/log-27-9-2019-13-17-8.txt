@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Sun Oct 27 2019 13:17:08 GMT+0330 (وقت عادی ایران)
+------------------------------------------------------
+
+Modified files:
+* lib/BasicData.dart
+* lib/ViewLyrics.dart
+
+
+Created files:
+* .autogit/logs/log-27-9-2019-11-28-49.txt
+
+
+Deleted files:
+
+
+Renamed files:
