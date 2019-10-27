@@ -42,7 +42,7 @@ class _ViewLyricsState extends State<ViewLyrics> {
   bool uploadingWindow = false;
   var taskId;
   AudioPlayer newAuioPlayer;
-  double speedPlayBack = 1;
+  double speedPlayBack = 10;
 
   @override
   void initState() {
@@ -174,42 +174,43 @@ class _ViewLyricsState extends State<ViewLyrics> {
     String musicName = widget.uri.split("/").last;
     String musicdir = widget.uri.replaceAll(musicName, "");
     uploaderMan = FlutterUploader();
+
     String url = "${BasicData.basicUrl}/uploadMusic";
     print(url);
-    // taskId = uploaderMan.enqueue(
-    //   url: Uri.encodeFull(url),
-    //   method: UploadMethod.POST,
-    //   files: [
-    //     FileItem(filename: lyricsName, savedDir: lyricsdir, fieldname: "lyric"),
-    //     FileItem(filename: musicName, savedDir: musicdir, fieldname: "music")
-    //   ],
-    //   data: {
-    //     "lyricsName": "lyrics-${audioTag["title"]}.json",
-    //     "musicName": musicName
-    //   },
-    //   showNotification: false,
-    // );
+    taskId = uploaderMan.enqueue(
+      url: Uri.encodeFull(url),
+      method: UploadMethod.POST,
+      files: [
+        FileItem(filename: lyricsName, savedDir: lyricsdir, fieldname: "lyric"),
+        FileItem(filename: musicName, savedDir: musicdir, fieldname: "music")
+      ],
+      data: {
+        "lyricsName": "lyrics-${audioTag["title"]}.json",
+        "musicName": musicName
+      },
+      showNotification: false,
+    );
 
-    // setState(() {
-    //   uploadingWindow = true;
-    // });
+    setState(() {
+      uploadingWindow = true;
+    });
 
-    // uploaderMan.progress.listen((p) {
-    //   setState(() {
-    //     progressUpload = p.progress;
-    //   });
+    uploaderMan.progress.listen((p) {
+      setState(() {
+        progressUpload = p.progress;
+      });
 
-    //   if (p.progress == 100) {
-    //     setState(() {
-    //       uploadingWindow = false;
-    //       // _scaffoldKey.currentState.showSnackBar(SnackBar(
-    //       //   content: Text("Upload Finish,Good Job",),
-    //       //   duration: Duration(seconds: 1),
-    //       //   backgroundColor: Colors.green,
-    //       // ));
-    //     });
-    //   }
-    // });
+      if (p.progress == 100) {
+        setState(() {
+          uploadingWindow = false;
+          // _scaffoldKey.currentState.showSnackBar(SnackBar(
+          //   content: Text("Upload Finish,Good Job",),
+          //   duration: Duration(seconds: 1),
+          //   backgroundColor: Colors.green,
+          // ));
+        });
+      }
+    });
   }
 
   void initNewAudioPlayer() {
