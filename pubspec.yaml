@@ -27,7 +27,7 @@ dependencies:
   audiotagger: ^1.0.1
   http:
   path_provider: ^0.5.0+1
-  flutter_uploader: ^1.0.5+1
+  flutter_uploader:
   audioplayers_with_rate: ^1.0.2
 
 dev_dependencies:

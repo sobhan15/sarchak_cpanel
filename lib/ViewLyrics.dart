@@ -38,7 +38,7 @@ class _ViewLyricsState extends State<ViewLyrics> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   List postionLine = [];
   FlutterUploader uploaderMan;
-  int progressUpload;
+  int progressUpload=0;
   bool uploadingWindow = false;
   var taskId;
   AudioPlayer newAuioPlayer;
