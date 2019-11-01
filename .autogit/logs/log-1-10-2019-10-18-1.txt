@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Fri Nov 01 2019 10:18:01 GMT+0330 (وقت عادی ایران)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-28-9-2019-22-7-1.txt
+* android/.project
+* android/.settings/org.eclipse.buildship.core.prefs
+* android/app/.classpath
+* android/app/.project
+* android/app/.settings/org.eclipse.buildship.core.prefs
+
+
+Deleted files:
+
+
+Renamed files:
