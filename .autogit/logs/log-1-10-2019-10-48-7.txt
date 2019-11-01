@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Fri Nov 01 2019 10:48:07 GMT+0330 (وقت عادی ایران)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-1-10-2019-10-18-1.txt
+
+
+Deleted files:
+
+
+Renamed files:
